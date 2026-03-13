@@ -16,7 +16,6 @@ class Post(db.Model):
 @app.route('/index')
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    
     if request.method == 'POST':
         day = request.form['day']
         task_1 = request.form['task_1']
@@ -38,10 +37,12 @@ def index():
         print(Post.query.all())
         return render_template('mainpage.html', post=post)
 
-
-@app.route('/about')
-def about():
-    return 'О нас'
+@app.route('/delete/<int:id>')
+def delete(id):
+    post = Post.query.get_or_404(id)
+    db.session.delete(post)
+    db.session.commit()
+    return '', 204
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=False)

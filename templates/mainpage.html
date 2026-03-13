@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="rus">
   <head>
     <meta charset="UTF-8" />
@@ -12,7 +12,7 @@
         <div class="corner">
           <button class="close-button margs"></button>
         </div>
-        <form method="post">
+        <form method="post" action="/">
           <label for="day">День: </label>
           <input type="text" name="day" id="day" />
           <p></p>
@@ -31,100 +31,35 @@
     </div>
     <div class="navbar">
       <div class="plus-container">
-        <button class="plus-button nav-but"></button>
-        <button class="list-button nav-but"></button>
+        <button class="plus-button"></button>
+        <button class="list-button"></button>
       </div>
     </div>
 
-<div class="columns">
-  <div class="columns">
 
-{% for p in post %}
+    <div class="columns">
+      {% for p in post %}
 
-<div class="col" id="f{{ loop.index }}">
+      <div class="col" id="f{{ loop.index }}" data-id="{{ p.id }}">
+        <div class="head">
+          <h1>{{ p.day }}</h1>
+          <button class="close-button"></button>
+        </div>
 
-  <div class="head">
-    <h1>{{ p.day }}</h1>
-    <button class="close-button"></button>
-  </div>
-
-  <ul>
-
-    {% if p.task_1 %}
-    <li>{{ p.task_1 }}</li>
-    {% endif %}
-
-    {% if p.task_2 %}
-    <li>{{ p.task_2 }}</li>
-    {% endif %}
-
-    {% if p.task_3 %}
-    <li>{{ p.task_3 }}</li>
-    {% endif %}
-
-  </ul>
-
-</div>
-
-{% endfor %}
-
-</div>
-
-
-  <!-- {% if post %}
-    <div class="col" id="f1"> 
-      <div class="head">
-        <h1>{{ post[0].day }}</h1>
-        <button class="close-button"></button>
+        <ul>
+          {% if p.task_1 %}
+          <li>{{ p.task_1 }}</li>
+          {% endif %} {% if p.task_2 %}
+          <li>{{ p.task_2 }}</li>
+          {% endif %} {% if p.task_3 %}
+          <li>{{ p.task_3 }}</li>
+          {% endif %}
+        </ul>
       </div>
 
-      <ul>
-        <li>{{ post[0].task_1 }}</li>
-        <li>{{ post[0].task_2 }}</li>
-        <li>{{ post[0].task_3 }}</li>
-      </ul>
+      {% endfor %}
     </div>
-  {% endif %}
-</div> -->
 
-      <!-- <div class="hidden col" id="f2">
-        <div class="head">
-          <h1>Сегодня</h1>
-          <button class="close-button"></button>
-        </div>
-
-        <ul>
-          <li>Дело 1</li>
-          <li>Дело 2</li>
-          <li>Дело 3</li>
-        </ul>
-      </div>
-      <div class="hidden col" id="f3">
-        <div class="head">
-          <h1>Сегодня</h1>
-          <button class="close-button"></button>
-        </div>
-
-        <ul>
-          <li>Дело 1</li>
-          <li>Дело 2</li>
-          <li>Дело 3</li>
-        </ul>
-      </div>
-      <div class="hidden col" id="f4">
-        <div class="head">
-          <h1>Сегодня</h1>
-          <button class="close-button"></button>
-        </div>
-
-        <ul>
-          <li>Дело 1</li>
-          <li>Дело 2</li>
-          <li>Дело 3</li>
-        </ul>
-      </div>
-    </div> -->
-
-<script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
   </body>
 </html>
