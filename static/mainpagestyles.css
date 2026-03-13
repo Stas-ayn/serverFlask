@@ -1,0 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.hidden {
+  display: none;
+}
+.columns {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-size: 1.5rem;
+}
+.col {
+  color: blue;
+  flex: 1;
+  padding: 15px;
+  height: 90vh;
+  max-width: 25%;
+}
+.col ul {
+  list-style-type: none;
+}
+.col li {
+  padding: 0.8rem;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+.navbar {
+  max-height: 20vh;
+  width: 100%;
+  background-color: rgba(213, 122, 122, 1);
+}
+#f1 {
+  background-color: rgba(150, 41, 35, 0.1);
+}
+#f2 {
+  background-color: rgba(103, 80, 164, 0.1);
+}
+#f3 {
+  background-color: rgba(232, 222, 248, 1);
+}
+#f4 {
+  background-color: rgba(213, 160, 231, 0.17);
+}
+
+.addColumnPopupBackground {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.174);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+.addColumnPopup {
+  background-color: antiquewhite;
+  height: 90vh;
+  width: 32%;
+  border-radius: 8px;
+}
+.corner {
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.margs {
+  margin: 15px;
+}
+.close-button {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  background-color: rgba(150, 41, 35, 0);
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M52 3.42383L29.4238 26L52 48.5762L48.5762 52L26 29.4238L3.42383 52L0 48.5762L22.5762 26L0 3.42383L3.42383 0L26 22.5762L48.5762 0L52 3.42383Z" fill="%23171616" fill-opacity="0.78"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.plus-button {
+  width: 3.75rem;
+  height: 3.75rem;
+  border: none;
+  background-color: rgba(92, 78, 61, 0);
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url('data:image/svg+xml;utf8,<svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M51 40H90V52H51V90H39V52H0V40H39V0H51V40Z" fill="%23792323" fill-opacity="0.88"/></svg>');
+}
+.plus-container {
+  padding: 0.4rem 3rem;
+  display: flex;
+  gap: 5%;
+}
+.list-button {
+  width: 62px;
+  height: 64px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="82" height="104" fill="none" viewBox="0 0 82 104"><rect width="82" height="101.443" y="2.557" fill="%23d9d9d9" rx="14"/><path fill="%23171616" d="M5.857 0h70.286v5.115H5.857z"/><path fill="%23d5c8c8" d="M57.4 14.208v4.547H4.91a2.274 2.274 0 0 1 0-4.547zM57.4 55.126v4.547H4.91a2.274 2.274 0 0 1 0-4.547zM57.4 41.486v4.547H4.91a2.274 2.274 0 0 1 0-4.547zM57.4 27.847v4.547H4.91a2.274 2.274 0 0 1 0-4.547z"/></svg>');
+}
+
+#addPopup form input {
+  margin: 15px 4px;
+}

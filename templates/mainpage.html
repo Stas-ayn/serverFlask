@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="rus">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="/static/mainpagestyles.css" />
+  </head>
+  <body>
+    <div class="hidden" id="addPopup">
+      <div class="addColumnPopup">
+        <div class="corner">
+          <button class="close-button margs"></button>
+        </div>
+        <form method="post">
+          <label for="day">День: </label>
+          <input type="text" name="day" id="day" />
+          <p></p>
+          <label for="first">Дело 1: </label>
+          <input type="text" name="task_1" id="first" />
+          <p></p>
+          <label for="second">Дело 2: </label>
+          <input type="text" name="task_2" id="second" />
+          <p></p>
+          <label for="third">Дело 3: </label>
+          <input type="text" name="task_3" id="third" />
+          <p></p>
+          <button type="submit">Добавить</button>
+        </form>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="plus-container">
+        <button class="plus-button nav-but"></button>
+        <button class="list-button nav-but"></button>
+      </div>
+    </div>
+
+<div class="columns">
+  <div class="columns">
+
+{% for p in post %}
+
+<div class="col" id="f{{ loop.index }}">
+
+  <div class="head">
+    <h1>{{ p.day }}</h1>
+    <button class="close-button"></button>
+  </div>
+
+  <ul>
+
+    {% if p.task_1 %}
+    <li>{{ p.task_1 }}</li>
+    {% endif %}
+
+    {% if p.task_2 %}
+    <li>{{ p.task_2 }}</li>
+    {% endif %}
+
+    {% if p.task_3 %}
+    <li>{{ p.task_3 }}</li>
+    {% endif %}
+
+  </ul>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+
+  <!-- {% if post %}
+    <div class="col" id="f1"> 
+      <div class="head">
+        <h1>{{ post[0].day }}</h1>
+        <button class="close-button"></button>
+      </div>
+
+      <ul>
+        <li>{{ post[0].task_1 }}</li>
+        <li>{{ post[0].task_2 }}</li>
+        <li>{{ post[0].task_3 }}</li>
+      </ul>
+    </div>
+  {% endif %}
+</div> -->
+
+      <!-- <div class="hidden col" id="f2">
+        <div class="head">
+          <h1>Сегодня</h1>
+          <button class="close-button"></button>
+        </div>
+
+        <ul>
+          <li>Дело 1</li>
+          <li>Дело 2</li>
+          <li>Дело 3</li>
+        </ul>
+      </div>
+      <div class="hidden col" id="f3">
+        <div class="head">
+          <h1>Сегодня</h1>
+          <button class="close-button"></button>
+        </div>
+
+        <ul>
+          <li>Дело 1</li>
+          <li>Дело 2</li>
+          <li>Дело 3</li>
+        </ul>
+      </div>
+      <div class="hidden col" id="f4">
+        <div class="head">
+          <h1>Сегодня</h1>
+          <button class="close-button"></button>
+        </div>
+
+        <ul>
+          <li>Дело 1</li>
+          <li>Дело 2</li>
+          <li>Дело 3</li>
+        </ul>
+      </div>
+    </div> -->
+
+<script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+  </body>
+</html>
